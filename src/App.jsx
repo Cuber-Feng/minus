@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./style.css";
 
 export default function App() {
-    const [balance, setBalance] = useState(1000.01);
+    const [balance, setBalance] = useState(100);
     const [input, setInput] = useState("");
 
     const addMoney = () => {
@@ -24,7 +24,7 @@ export default function App() {
         <div className="container">
             <h1>💰 My Balance</h1>
 
-            <h2>{balance}</h2>
+            <h2>{balance.toFixed(2)}</h2>
 
             <input
                 type="number"
@@ -34,8 +34,6 @@ export default function App() {
             />
 
             <div className="buttons">
-                <button onClick={addMoney}>Add</button>
-                <button onClick={spendMoney}>Spend</button>
                 <button onClick={setMoney}>Set</button>
             </div>
         </div>
